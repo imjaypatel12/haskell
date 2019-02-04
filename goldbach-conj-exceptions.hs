@@ -56,6 +56,6 @@ oddComposites = filter(\x-> not(isPrime x)) oddsFrom3
 
 {- Goldbach’s-other-conjecture problem; finds composites that does not follow:
    "Every odd composite number can be expressed as the sum of a prime and twice a square."
-   Use different impl of isASquare to check various methods. Use isSquare for arithmoi lib -}
+   Use different impl of isASquare to check various methods. Use * isSquare * for arithmoi lib -}
 goldbachExceptions :: [Integer]
-goldbachExceptions = [g | g <- oddComposites, null [p | p <- takeWhile(<g) primes, isSquare ((g-p) `div` 2)] ]
+goldbachExceptions = [g | g <- oddComposites, null [p | p <- takeWhile(<g) primes, isASquare ((g-p) `div` 2)] ]
